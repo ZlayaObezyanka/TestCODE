@@ -30,6 +30,7 @@ void FileProcessing::writeToFile()
 void FileProcessing::groupByName()
 {
     openFile();
+    std::cout << std::endl;
     std::sort(f_vec.begin(), f_vec.end(),
         [](const FileList& fl1, const FileList& fl2)
         {
@@ -54,6 +55,7 @@ void FileProcessing::groupByName()
 void FileProcessing::groupByTime()
 {
     openFile();
+    std::cout << std::endl;
     std::sort(f_vec.begin(), f_vec.end(),
         [](const FileList& fl1, const FileList& fl2)
         {
@@ -80,6 +82,7 @@ void FileProcessing::groupByTime()
 void FileProcessing::groupBy_Type()
 {
     openFile();
+    std::cout << std::endl;
     std::sort(f_vec.begin(), f_vec.end(),
         [](const FileList& fl1, const FileList& fl2)
         {
@@ -111,6 +114,7 @@ void FileProcessing::openFile()
             while (!in.eof())
             {
                 in >> fp;
+                //std::cout << std::setprecision(5) << fp.timeOfCreation << std::endl;
                 f_vec.push_back(fp);
             }
         }
