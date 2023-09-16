@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
-
+#include <iomanip>
 
 struct FileList
 {
@@ -11,8 +11,8 @@ struct FileList
     std::string typeObj;
     float x;
     float y;
-    double timeOfCreation;
-
+    double timeOfCreation{ 0.0 };
+   
     friend std::istream& operator >>(std::istream& in, FileList& fl) {
         in >> fl.nameObj >> fl.x >> fl.y >> fl.typeObj >> fl.timeOfCreation;
         return in;
