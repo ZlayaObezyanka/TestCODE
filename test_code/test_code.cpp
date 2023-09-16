@@ -4,7 +4,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <list>
+#include <iterator>
+//#include <list>
+#include <vector>
+
 #include <conio.h>
 #include "Menu.h"
 
@@ -15,6 +18,4 @@ int main()
 	setlocale(LC_ALL, "rus");
 	Menu menu;
 	menu.menu();
-
-
 }
