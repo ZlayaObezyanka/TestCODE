@@ -3,6 +3,9 @@
 #include <iostream>
 #include <conio.h>
 
+static constexpr int UP = 72;
+static constexpr int DOWN = 80;
+static constexpr int ENTER = 13;
 
 
 void Menu::menu()
@@ -53,9 +56,7 @@ void Menu::menu()
 			else
 				return;
 		}
-
 		}
-
 	}
 }
 
@@ -111,6 +112,5 @@ void Menu::groupMenu()
 			system("CLS");
 		}
 		}
-
 	}
 }

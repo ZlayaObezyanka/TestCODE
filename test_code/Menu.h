@@ -2,10 +2,6 @@
 
 #include "FileProc.h"
 
-#define UP 72
-#define DOWN 80
-#define ENTER 13
-
 class Menu
 {
 public:
