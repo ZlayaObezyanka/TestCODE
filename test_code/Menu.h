@@ -1,5 +1,5 @@
 #pragma once
-#include <windows.h>
+
 #include "FileProc.h"
 
 #define UP 72
@@ -20,7 +20,6 @@ public:
 			}
 
 			ch = _getch();
-			
 			switch (ch)
 			{
 			case UP:
@@ -43,7 +42,6 @@ public:
 					fp.readFile("test.txt");
 					std::cout << "Нажмите любую клавишу для продолжения" << '\n';
 					_getch();
-						 
 				}
 				else if (activMenu == 1)
 				{
@@ -54,13 +52,11 @@ public:
 				}
 				else if (activMenu == 2)
 				{
-
-
+					groupMenu();
+					break;
 				}
 				else
-				{
 					return;
-				}
 			}
 			
 			}
@@ -72,6 +68,63 @@ private:
 	uint8_t activMenu = 0;
 	uint8_t ch;
 	const std::string menuIteam[4] = { "Прочитать список объектов", "Добавить объект", "Группировать объекты", "Выход"};
+	const std::string menuGroup[4] = { "Группировка по имени", "Группровка по типу", "Группировка по времени", "Вернуться"};
 	FileProcessing fp;
-	bool exit = 0;
+	
+	void groupMenu()
+	{
+		activMenu = 0;
+		while (true)
+		{
+			system("CLS");
+			for (int i = 0; i < size(menuGroup); ++i)
+			{
+				i == activMenu ? std::cout << '>' << menuGroup[i] << '<' << '\n' : std::cout << ' ' << menuGroup[i] << ' ' << '\n';
+			}
+
+			ch = _getch();
+			switch (ch)
+			{
+			case UP:
+			{
+				if (activMenu > 0)
+					--activMenu;
+				break;
+			}
+			case DOWN:
+			{
+				if (activMenu < size(menuIteam) - 1)
+					++activMenu;
+				break;
+			}
+			case ENTER: 
+			{
+				if (activMenu == 0)
+				{
+					system("CLS");
+					fp.groupByName();
+					std::cout << "Введите любую клавишу для продолжения";
+					_getch();
+				}
+				else if (activMenu == 1)
+				{
+					fp.groupBy_Type();
+					std::cout << "Введите любую клавишу для продолжения";
+					_getch();
+				}
+				else if (activMenu == 2)
+				{
+					fp.groupByTime();
+					std::cout << "Введите любую клавишу для продолжения";
+					_getch();
+				}
+				else
+					return;
+				system("CLS");
+			}
+			}
+
+		}
+	}
 };
+

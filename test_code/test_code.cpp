@@ -2,20 +2,25 @@
 //
 
 #include <iostream>
+#include <windows.h>
+#include <algorithm>
 #include <fstream>
-#include <string>
-#include <iterator>
-//#include <list>
+//#include <string>
+//#include <iterator>
 #include <vector>
-
 #include <conio.h>
 #include "Menu.h"
 
 
 
 int main()
-{
+{	
 	setlocale(LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
 	Menu menu;
 	menu.menu();
+
+	return 0;
 }
