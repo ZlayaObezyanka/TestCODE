@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileProc.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="test_code.cpp" />
   </ItemGroup>
   <ItemGroup>
